@@ -23,14 +23,14 @@ public class Application {
 
     public static void main(String[] args) {
         Map<String, Object> defaultProperties = new HashMap<>();
-        defaultProperties.put("user.age", 88);
+        defaultProperties.put("user.age", 66);
 
         SpringApplication springApplication = new SpringApplicationBuilder(Application.class)
                 .properties(defaultProperties)
                 .build();
 
         ConfigurableApplicationContext context = springApplication.run(
-                asResolvedArray("--user.age=111",
+                asResolvedArray("--user.age=22",
                         "--spring.config.additional-location=classpath:/extend/config/",
                         "--spring.profiles.active=dev",
                         "--spring.config.name=application,environmentPostProcessor,applicationContextInitializer,applicationListener,springApplicationRunListener"));

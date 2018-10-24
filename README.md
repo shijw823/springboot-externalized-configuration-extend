@@ -1,4 +1,4 @@
-# 外部化配置属性源 扩展
+# Spring Boot外部化配置属性源 扩展
 ## 1、基于EnvironmentPostProcessor 扩展
 ## 2、基于ApplicationEnvironmentPreparedEvent 扩展
 ## 3、基于SpringApplicationRunListener 扩展
