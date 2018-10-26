@@ -1,5 +1,6 @@
-package springboot.property.source.extend;
+package springboot.propertysource.extend;
 
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -26,14 +27,21 @@ public class Application {
         defaultProperties.put("user.age", 66);
 
         SpringApplication springApplication = new SpringApplicationBuilder(Application.class)
+                .bannerMode(Banner.Mode.OFF)
                 .properties(defaultProperties)
                 .build();
 
+        /*
+         * spring.config.additional-location 优先级高于 spring.config.location
+         * 不指定 spring.config.name 查找 spring.config.additional-location + spring.config.location
+         * 目录下 application.properties，否则查找 两个目录下 spring.config.name 指定的文件
+         */
         ConfigurableApplicationContext context = springApplication.run(
                 asResolvedArray("--user.age=22",
                         "--spring.config.additional-location=classpath:/extend/config/",
                         "--spring.profiles.active=dev",
-                        "--spring.config.name=application,environmentPostProcessor,applicationContextInitializer,applicationListener,springApplicationRunListener"));
+                        "--spring.config.name=config,environmentPostProcessor,applicationContextInitializer,applicationListener,springApplicationRunListener"
+                ));
 
         ConfigurableEnvironment env = context.getEnvironment();
 

@@ -1,4 +1,4 @@
-package springboot.property.source.extend.processor;
+package springboot.propertysource.extend.processor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.env.EnvironmentPostProcessor;
@@ -6,7 +6,7 @@ import org.springframework.boot.env.PropertiesPropertySourceLoader;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.PropertySource;
 import org.springframework.util.ObjectUtils;
-import springboot.property.source.extend.util.PropertySourceLoaderUtils;
+import springboot.propertysource.extend.util.PropertySourceLoaderUtils;
 
 import java.io.File;
 import java.util.stream.Stream;
@@ -34,9 +34,15 @@ public class CustomEnvironmentPostProcessor implements EnvironmentPostProcessor 
         String[] activeProfiles = environment.getActiveProfiles();
 
         for (String activeProfile : activeProfiles) {
-            String path = this.getClass().getResource("/" + activeProfile).getPath();
-            File file = new File(path);
-            File[] files = file.listFiles();
+            File[] files = null;
+            try {
+                String path = this.getClass().getResource("/" + activeProfile).getPath();
+                File file = new File(path);
+                files = file.listFiles();
+            } catch (Exception e) {
+                e.printStackTrace();
+                continue;
+            }
 
             if (ObjectUtils.isEmpty(files)) {
                 continue;

@@ -1,6 +1,6 @@
-package springboot.property.source.extend.event.listener;
+package springboot.propertysource.extend.event.listener;
 
-import springboot.property.source.extend.util.PropertySourceLoaderUtils;
+import springboot.propertysource.extend.util.PropertySourceLoaderUtils;
 import org.springframework.boot.context.event.ApplicationPreparedEvent;
 import org.springframework.boot.env.PropertiesPropertySourceLoader;
 import org.springframework.context.ApplicationListener;

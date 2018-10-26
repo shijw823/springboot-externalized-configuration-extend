@@ -1,4 +1,4 @@
-package springboot.property.source.extend.util;
+package springboot.propertysource.extend.util;
 
 import org.springframework.boot.env.PropertySourceLoader;
 import org.springframework.core.env.PropertySource;

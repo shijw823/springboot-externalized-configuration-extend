@@ -1,4 +1,4 @@
-package springboot.property.source.extend.test;
+package springboot.propertysource.extend.test;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

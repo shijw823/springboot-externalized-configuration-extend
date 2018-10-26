@@ -1,6 +1,6 @@
-package springboot.property.source.extend.initializer;
+package springboot.propertysource.extend.initializer;
 
-import springboot.property.source.extend.util.PropertySourceLoaderUtils;
+import springboot.propertysource.extend.util.PropertySourceLoaderUtils;
 import org.springframework.boot.env.PropertiesPropertySourceLoader;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;

@@ -1,16 +1,16 @@
 # Spring Application Run Listeners
 org.springframework.boot.SpringApplicationRunListener=\
-springboot.property.source.extend.listener.CustomSpringApplicationRunListener
+springboot.propertysource.extend.listener.CustomSpringApplicationRunListener
 
 # Application Context Initializers
 org.springframework.context.ApplicationContextInitializer=\
-springboot.property.source.extend.initializer.CustomApplicationContextInitializer
+springboot.propertysource.extend.initializer.CustomApplicationContextInitializer
 
 # Application Listeners
 org.springframework.context.ApplicationListener=\
-springboot.property.source.extend.event.listener.ApplicationEnvironmentPreparedEventListener,\
-springboot.property.source.extend.event.listener.ApplicationPreparedEventListener
+springboot.propertysource.extend.event.listener.ApplicationEnvironmentPreparedEventListener,\
+springboot.propertysource.extend.event.listener.ApplicationPreparedEventListener
 
 # Environment Post Processors
 org.springframework.boot.env.EnvironmentPostProcessor=\
-springboot.property.source.extend.processor.CustomEnvironmentPostProcessor
+springboot.propertysource.extend.processor.CustomEnvironmentPostProcessor

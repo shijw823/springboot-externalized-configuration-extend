@@ -1,4 +1,4 @@
-package springboot.property.source.extend.config;
+package springboot.propertysource.extend.config;
 
 /**
  * 学生配置文件
