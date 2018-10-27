@@ -4,8 +4,8 @@
 ## 2、基于ApplicationEnvironmentPreparedEvent 扩展
 ## 3、基于SpringApplicationRunListener 扩展
 ## 4、基于ApplicationContextInitializer 扩展
-> 关于与 spring-cloud-config 整合，对外部化配置加载的扩展，参考源码
-org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration  、org.springframework.cloud.config.client.ConfigServicePropertySourceLocator#locate 是对 ApplicationContextInitializer 的扩展
+> 关于与 Spring Cloud Config Client 整合，对外部化配置加载的扩展（绑定到Config Server，使用远端的property sources初始化`Environment`），参考源码
+org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration（是对 ApplicationContextInitializer 的扩展）、org.springframework.cloud.config.client.ConfigServicePropertySourceLocator#locate
 ## 5、基于ApplicationPreparedEvent 扩展
 
 # 官方资料

@@ -18,6 +18,7 @@ import java.util.stream.Stream;
  * @since 2018/10/15
  */
 public class CustomEnvironmentPostProcessor implements EnvironmentPostProcessor {
+    private static final String PROPERTYFILESUFFIX = "properties";
     private final PropertiesPropertySourceLoader loader = new PropertiesPropertySourceLoader();
 
     @Override
@@ -26,7 +27,6 @@ public class CustomEnvironmentPostProcessor implements EnvironmentPostProcessor 
 //                "extend/config/environmentPostProcessor.properties", loader);
 //        MutablePropertySources propertySources = environment.getPropertySources();
 //        propertySources.addFirst(ps);
-
 
         /*
          * 加载 activeProfiles 目录下的所有属性文件
@@ -38,7 +38,7 @@ public class CustomEnvironmentPostProcessor implements EnvironmentPostProcessor 
             try {
                 String path = this.getClass().getResource("/" + activeProfile).getPath();
                 File file = new File(path);
-                files = file.listFiles();
+                files = file.listFiles((f, name) -> name.endsWith(PROPERTYFILESUFFIX));
             } catch (Exception e) {
                 e.printStackTrace();
                 continue;
@@ -65,7 +65,9 @@ public class CustomEnvironmentPostProcessor implements EnvironmentPostProcessor 
                 PropertySource propertySource = PropertySourceLoaderUtils.loadPropertySource("CustomEnvironmentPostProcessor-"
                                 + activeProfile + "-" + fileNamePrefix,
                         activeProfile + "/" + fileName, loader);
-                environment.getPropertySources().addFirst(propertySource);
+                if(propertySource != null) {
+                    environment.getPropertySources().addFirst(propertySource);
+                }
             });
         }
     }

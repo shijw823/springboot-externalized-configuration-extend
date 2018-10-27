@@ -40,7 +40,7 @@ public class Application {
                 asResolvedArray("--user.age=22",
                         "--spring.config.additional-location=classpath:/extend/config/",
                         "--spring.profiles.active=dev",
-                        "--spring.config.name=config,environmentPostProcessor,applicationContextInitializer,applicationListener,springApplicationRunListener"
+                        "--spring.config.name=config,application,environmentPostProcessor,applicationContextInitializer,applicationListener,springApplicationRunListener"
                 ));
 
         ConfigurableEnvironment env = context.getEnvironment();
