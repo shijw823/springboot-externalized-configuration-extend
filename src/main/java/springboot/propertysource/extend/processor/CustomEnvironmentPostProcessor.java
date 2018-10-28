@@ -18,7 +18,7 @@ import java.util.stream.Stream;
  * @since 2018/10/15
  */
 public class CustomEnvironmentPostProcessor implements EnvironmentPostProcessor {
-    private static final String PROPERTYFILESUFFIX = "properties";
+    private static final String PROPERTYFILESUFFIX = ".properties";
     private final PropertiesPropertySourceLoader loader = new PropertiesPropertySourceLoader();
 
     @Override
@@ -29,7 +29,7 @@ public class CustomEnvironmentPostProcessor implements EnvironmentPostProcessor 
 //        propertySources.addFirst(ps);
 
         /*
-         * 加载 activeProfiles 目录下的所有属性文件
+         * 加载 activeProfiles 目录下的所有 .properties 属性文件
          */
         String[] activeProfiles = environment.getActiveProfiles();
 

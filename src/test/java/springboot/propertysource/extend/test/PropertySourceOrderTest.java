@@ -12,10 +12,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 /**
  * 单元测试 {@link PropertySources} 顺序 @TestPropertySource、@SpringBootTest
  *
+ * @see TestPropertySource#properties
+ * @see SpringBootTest#properties
+ * @see TestPropertySource#locations
  * @author shijw823
- * @TestPropertySource#properties
- * @SpringBootTest#properties
- * @TestPropertySource#locations
  * @since 2018/10/15
  */
 @RunWith(SpringRunner.class)
