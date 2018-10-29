@@ -1,5 +1,7 @@
 # Spring Boot外部化配置属性源 扩展
 
+> 注意：bootstrap.properties 需要修改 配置服务 相关信息
+>
 > 以下的扩展可以选取其中一种进行扩展，只是属性源的加载时机不太一样
 ## 1、基于EnvironmentPostProcessor 扩展
 ## 2、基于ApplicationEnvironmentPreparedEvent 扩展
